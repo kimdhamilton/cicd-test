@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-      if: test -f ${{ $DATE/irc.log }}
+      if: test -f ${{ DATE/irc.log }}
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
