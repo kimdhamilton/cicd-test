@@ -19,6 +19,10 @@ jobs:
     steps:
       - checkout
 
+      - run: 
+          name: "Setup custom environment variables"
+          command: git config --global user.email "$email" && git config --global user.name "$name"
+
       # Download and cache dependencies
       #- restore_cache:
       #    keys:
