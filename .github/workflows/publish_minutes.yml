@@ -1,4 +1,4 @@
-name: Node CI
+name: Publish minutes
 
 on: [push]
 
@@ -17,10 +17,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+    - name: Setup custom environment variables
+      run: git config --global push.default simple && git config --global user.email "kimdhamilton@gmail.com" && git config --global user.name "Kimbot"   
+    - name: Generate html minutes
       run: |
-        npm ci
-        npm run build --if-present
-        npm test
+        npm intall
+        sh ./generate-html.sh
       env:
         CI: true
