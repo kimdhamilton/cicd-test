@@ -1,4 +1,4 @@
-name: CI
+name: Download raw minutes
 
 on:
   repository_dispatch:
