@@ -5,6 +5,8 @@ on:
     types: do-something
   schedule:
     - cron:  '*/5 * * * *'
+      # 
+      # 0 18 * * TUE
 
 jobs:
   build:
