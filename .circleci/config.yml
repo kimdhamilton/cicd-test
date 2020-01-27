@@ -21,7 +21,7 @@ jobs:
 
       - run: 
           name: "Setup custom environment variables"
-          command: git config --global user.email "$email" && git config --global user.name "$name"
+          command: git config --global push.default simple && git config --global user.email "$email" && git config --global user.name "$name"
 
       # Download and cache dependencies
       #- restore_cache:
