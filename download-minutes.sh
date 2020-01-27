@@ -9,5 +9,5 @@ curl -# "https://w3c-ccg.s3.digitalbazaar.com/minutes/$DATE-irc.log" > $DATE/irc
 git add $DATE/irc-raw.log
 MESSAGE="Add raw log for $DATE telecon."
 git commit $DATE/irc-raw.log -m "$MESSAGE [ci skip]"
-git push
+git push origin master
 

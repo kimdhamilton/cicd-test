@@ -13,5 +13,5 @@ MESSAGE="Add text minutes for $DATE telecon."
 
 git add $DIRECTORY/index.html index.html
 git commit $DIRECTORY/index.html index.html -m "$MESSAGE"
-git push
+git push origin master
 
