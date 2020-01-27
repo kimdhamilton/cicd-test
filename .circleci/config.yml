@@ -27,7 +27,7 @@ jobs:
       #      - v1-dependencies-
 
       #- run: yarn install
-      - run: ../download-minutes.sh
+      - run: download-minutes.sh
         #mkdir -p $DATE
         #echo "....Downloading IRC logs for $DATE..."
         #curl -# "https://w3c-ccg.s3.digitalbazaar.com/minutes/$DATE-irc.log" > $DATE/irc-raw.log
