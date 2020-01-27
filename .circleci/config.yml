@@ -21,7 +21,7 @@ jobs:
       
       - add_ssh_keys:
           fingerprints:
-            - "d3:28:56:9d:60:cd:b9:b5:b3:cc:f4:2f:78:49:0d:59"
+            - "7a:ce:91:d4:f6:46:4b:ba:a9:13:38:68:6b:c9:da:d3"
 
       - run: 
           name: "Setup custom environment variables"
