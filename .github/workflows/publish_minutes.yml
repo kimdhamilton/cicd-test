@@ -5,6 +5,8 @@ on: [push]
 jobs:
   generate-html:
     runs-on: ubuntu-latest
+    env: 
+      DATE: "2020-01-17"
 
     steps:
     - uses: actions/checkout@v1
