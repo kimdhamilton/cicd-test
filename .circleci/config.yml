@@ -23,8 +23,8 @@ jobs:
           name: "Setup custom environment variables"
           command: git config --global push.default simple && git config --global user.email "$email" && git config --global user.name "$name"
       - add_ssh_keys:
-        fingerprints:
-          - "d3:28:56:9d:60:cd:b9:b5:b3:cc:f4:2f:78:49:0d:59"
+          fingerprints:
+            - "d3:28:56:9d:60:cd:b9:b5:b3:cc:f4:2f:78:49:0d:59"
         
       # Download and cache dependencies
       #- restore_cache:
