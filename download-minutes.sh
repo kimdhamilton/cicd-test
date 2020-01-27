@@ -14,4 +14,5 @@ if [ ! -f "$DATE/irc-raw.log" ]; then
     git push origin master
 else
   echo "nothing to do"
+  exit 1
 fi

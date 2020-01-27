@@ -15,4 +15,5 @@ if [[ -f "$DATE/irc.log" && ! -f "$DATE/index.html" ]]; then
     git push origin master
 else
     echo "nothing to do"
+    exit 1
 fi
