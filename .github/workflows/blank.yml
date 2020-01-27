@@ -1,6 +1,10 @@
 name: CI
 
-on: [push]
+on:
+  repository_dispatch:
+    types: do-something
+  schedule:
+    - cron:  '*/5 * * * *'
 
 jobs:
   build:
@@ -9,9 +13,25 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    #- name: Run a one-line script
+    #  run: echo Hello, world!
+    #- name: Run a multi-line script
+    #  run: |
+    #    echo Add other actions to build,
+    #    echo test, and deploy your project.
+    - name: Pull raw meeting log file
+      run: sh ./download-minutes.sh
+
+    # command: git config --global push.default simple && git config --global user.email "$email" && git config --global user.name "$name"
+        
+      # Download and cache dependencies
+      #- restore_cache:
+      #    keys:
+      #      - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+      #      - v1-dependencies-
+
+      #- run: yarn install
+      #- run: sh ./download-minutes.sh
+
+
