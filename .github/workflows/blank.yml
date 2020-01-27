@@ -15,6 +15,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: Setup custom environment variables
+      run: git config --global push.default simple && git config --global user.email "kimdhamilton@gmail.com" && git config --global user.name "Kimbot"
+        
     #- name: Run a one-line script
     #  run: echo Hello, world!
     #- name: Run a multi-line script
