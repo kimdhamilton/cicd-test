@@ -3,16 +3,12 @@ name: Publish minutes
 on: [push]
 
 jobs:
-  build:
-
+  generate-html:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@v1
+      if: test -f ${{ $DATE/irc.log }}
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -25,3 +21,21 @@ jobs:
         sh ./generate-html.sh
       env:
         CI: true
+  job2:
+    runs-on: ubuntu-latest
+    needs: generate-html
+    steps:
+    - name: Send email
+      uses: dawidd6/action-send-mail@v1.3.0
+   
+      #with:
+       # server_address: 666
+       # server_port: 
+       # username: 
+        # Authenticate with this password to SMTP server
+        #password: 
+        #subject: 
+        #body: 
+        #to: 
+        #from: 
+        #content_type: # optional, default is text/plain
