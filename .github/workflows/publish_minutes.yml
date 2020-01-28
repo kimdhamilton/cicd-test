@@ -42,10 +42,6 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  send-email:
-    runs-on: ubuntu-latest
-    needs: generate-html
-    steps:
     - name: Send email
       uses: dawidd6/action-send-mail@v1.3.0
    
@@ -55,7 +51,7 @@ jobs:
         username: kimdhamilton
         password: ${{ secrets.password }}
         subject: minutes are published!
-        body: ${{ jobs.generate_html.steps.generate_html_minutes.outputs.email_file_name }}
+        body: ${{ steps.generate_html_minutes.outputs.email_file_name }}
         to: kimdhamilton+123@gmail.com
         from: kimdhamilton@gmail.com
         #content_type: # optional, default is text/plain
