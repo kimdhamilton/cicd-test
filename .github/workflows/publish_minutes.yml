@@ -52,7 +52,9 @@ jobs:
         username: kimdhamilton
         password: ${{ secrets.password }}
         subject: minutes are published!
-        body: this is a test of minute publishing
+        body: file://$DATE/email.log
         to: kimdhamilton+123@gmail.com
         from: kimdhamilton@gmail.com
         #content_type: # optional, default is text/plain
+      env:
+        DATE: "2020-01-21"
