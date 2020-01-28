@@ -60,6 +60,6 @@ jobs:
       with:
         MESSAGE: ${{ format('Credentials CG Minutes Available https://w3c-ccg.github.io/meetings/{0} #w3c #ccg', steps.generate_html_minutes.outputs.date) }}
         TWITTER_CONSUMER_KEY: ${{ secrets.twitter_api_key }}
-        TWITTER_CONSUMER_SECRET: ${{ secrets.twitter_api_secret }
-        TWITTER_ACCESS_TOKEN: ${{ secrets.twitter_access_token }
-        TWITTER_ACCESS_SECRET:  ${{ secrets.twitter_access_token_secret }
+        TWITTER_CONSUMER_SECRET: ${{ secrets.twitter_api_secret }}
+        TWITTER_ACCESS_TOKEN: ${{ secrets.twitter_access_token }}
+        TWITTER_ACCESS_SECRET:  ${{ secrets.twitter_access_token_secret }}
