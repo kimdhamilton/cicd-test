@@ -46,8 +46,8 @@ jobs:
         server_port: 465
         username: kimdhamilton
         password: ${{ secrets.password }}
-        subject: raw minutes are downloaded!
-        body: you need to clean up this shit
+        subject: W3C CCG raw minutes need to be cleaned up
+        body: Go to scribe-tool (https://w3c-ccg.github.io/meetings/scribe-tool/), paste in the contents of irc-raw.log, clean it up, save results in irc.log (same folder) and commit.
         to: kimdhamilton+456@gmail.com
         from: kimdhamilton@gmail.com
         #content_type: # optional, default is text/plain
