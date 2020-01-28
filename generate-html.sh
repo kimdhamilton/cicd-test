@@ -6,6 +6,7 @@ if [[ -f "$DATE/irc.log" && ! -f "$DATE/index.html" ]]; then
     echo "Generating minutes for $DATE"
     # Generate minutes
     node scribe-tool/index.js -d $DIRECTORY -m -i
+    git add index.html $DIRECTORY/index.html
 else
     echo "nothing to do"
     exit 1
