@@ -22,14 +22,14 @@ jobs:
 
     - uses: stefanzweifel/git-auto-commit-action@v2.5.0
       with:
-        commit_message: Apply automatic changes
+        commit_message: Add raw log for ${{ DATE }} telecon [ci skip]
         branch: ${{ github.head_ref }}
 
         # Optional git params
         commit_options: '--no-verify --signoff'
 
         # Optional glob pattern of files which should be added to the commit
-        file_pattern: \*.log
+        file_pattern: irc-raw.log
 
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
