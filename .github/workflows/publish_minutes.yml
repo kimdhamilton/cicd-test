@@ -58,7 +58,7 @@ jobs:
     - name: Twitter Action
       uses: xorilog/twitter-action@0.1
       with:
-        MESSAGE: ${{ format('Credentials CG Minutes Available https://w3c-ccg.github.io/meetings/{0} #w3c #ccg', steps.generate_html_minutes.outputs.date) }}
+        MESSAGE: ${{ format('Credentials CG Minutes Available https://w3c-ccg.github.io/meetings/{0} {1}', steps.generate_html_minutes.outputs.date), '#w3c #ccg' }}
         TWITTER_CONSUMER_KEY: ${{ secrets.twitter_api_key }}
         TWITTER_CONSUMER_SECRET: ${{ secrets.twitter_api_secret }}
         TWITTER_ACCESS_TOKEN: ${{ secrets.twitter_access_token }}
