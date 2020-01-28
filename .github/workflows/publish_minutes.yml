@@ -20,7 +20,7 @@ jobs:
     - name: Generate html minutes
       run: |
         npm install
-        sh ./generate-html.sh
+        bash ./generate-html.sh
       env:
         CI: true
         DATE: "2020-01-21"
