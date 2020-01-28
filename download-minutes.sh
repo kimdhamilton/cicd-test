@@ -9,7 +9,7 @@ if [ ! -f "$DATE/irc-raw.log" ]; then
     git add $DATE/irc-raw.log
     MESSAGE="Add raw log for $DATE telecon."
     git commit $DATE/irc-raw.log -m "$MESSAGE [ci skip]"
-    git push origin master
+    git push
 else
   echo "nothing to do"
   exit 1
