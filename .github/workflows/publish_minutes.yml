@@ -32,14 +32,13 @@ jobs:
     - name: Send email
       uses: dawidd6/action-send-mail@v1.3.0
    
-      #with:
-       # server_address: 666
-       # server_port: 
-       # username: 
-        # Authenticate with this password to SMTP server
-        #password: 
-        #subject: 
-        #body: 
-        #to: 
-        #from: 
+      with:
+        server_address: smtp.gmail.com
+        server_port: 465
+        username: kimdhamilton
+        password: ${{ secrets.password }}
+        subject: minutes are published!
+        body: this is a test of minute publishing
+        to: kimdhamilton+123@gmail.com
+        from: kimdhamilton@gmail.com
         #content_type: # optional, default is text/plain
