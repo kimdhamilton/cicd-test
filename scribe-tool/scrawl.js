@@ -575,6 +575,7 @@
         person['name'] = name;
         present.push(person);
       } else if (name) {
+        console.warn('Could not find alias for', name);
         var person = {};
         person['name'] = name;
         present.push(person);

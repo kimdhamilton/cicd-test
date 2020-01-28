@@ -29,6 +29,7 @@ if(!program.directory) {
 var dstDir = path.resolve(path.join(program.directory));
 var logFile = path.resolve(path.join(program.directory, 'irc.log'));
 var indexFile = path.resolve(path.join(program.directory, 'index.html'));
+var emailContentsFile = path.resolve(path.join(program.directory, 'email.log'));
 var htmlHeader = fs.readFileSync(
   __dirname + '/header.html', {encoding: 'utf8'});
 var htmlFooter = fs.readFileSync(
@@ -300,7 +301,7 @@ async.waterfall([ function(callback) {
   }
 }, function(callback) {
   var content = generateEmailBody();
-  console.log(content);
+  fs.writeFileSync(emailContentsFile, content, 'utf-8');
 
   // send the email about the meeting
   if(program.email) {
