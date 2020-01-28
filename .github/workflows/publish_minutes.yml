@@ -49,7 +49,7 @@ jobs:
         server_port: 465
         username: kimdhamilton
         password: ${{ secrets.password }}
-        subject: minutes are published!
+        subject: $$ format('[MINUTES] W3C Credentials CG Call - ${0} 12pm ET, steps.generate_html_minutes.outputs.date) }}
         body: ${{ format('file://{0}/email.log', steps.generate_html_minutes.outputs.date) }}
         to: kimdhamilton+123@gmail.com
         from: kimdhamilton@gmail.com
