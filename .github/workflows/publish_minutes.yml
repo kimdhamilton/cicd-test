@@ -18,12 +18,11 @@ jobs:
     - name: Setup custom environment variables
       run: git config --global push.default simple && git config --global user.email "kimdhamilton@gmail.com" && git config --global user.name "Kimbot"   
     - name: Generate html minutes
+      id: generate_html_minutes
       run: |
         npm install
         bash ./generate-html.sh
-        
-        echo "##[set-output name=email_file_name;]file://$DATE/email.log"
-        
+        echo ::set-output name=date::${DATE}
       env:
         CI: true
         DATE: "2020-01-21"
@@ -51,7 +50,7 @@ jobs:
         username: kimdhamilton
         password: ${{ secrets.password }}
         subject: minutes are published!
-        body: ${{ steps.generate_html_minutes.outputs.email_file_name }}
+        body: ${{ format('file://{0}/email.log', steps.generate_html_minutes.outputs.date }}
         to: kimdhamilton+123@gmail.com
         from: kimdhamilton@gmail.com
         #content_type: # optional, default is text/plain
