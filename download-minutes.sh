@@ -1,7 +1,5 @@
 #!/bin/bash
 
-DATE=2020-01-21
-
 if [ ! -f "$DATE/irc-raw.log" ]; then
     mkdir -p $DATE
     echo "....Downloading IRC logs for $DATE..."
