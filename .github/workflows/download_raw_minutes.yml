@@ -2,10 +2,10 @@ name: Download raw minutes
 
 on:
   repository_dispatch:
-    types: start
-  schedule:
-    - cron:  '*/5 * * * *'
-      # 0 18 * * TUE
+    types: download_minutes
+  #schedule:
+  #  - cron:  '*/5 * * * *'
+  # 0 18 * * TUE
 
 jobs:
   download-minutes:
@@ -17,7 +17,8 @@ jobs:
     - name: Setup custom environment variables
       run: git config --global push.default simple && git config --global user.email "w3c.ccg@gmail.com" && git config --global user.name "W3C CCG"
     - name: Pull raw meeting log file
-      env: { DATE: "2020-01-21" }
+      env: 
+        DATE: ${{ github.event.client_payload.date }}
       run: bash ./download-minutes.sh
 
     - uses: stefanzweifel/git-auto-commit-action@v2.5.0
