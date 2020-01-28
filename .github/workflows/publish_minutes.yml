@@ -50,7 +50,7 @@ jobs:
         username: kimdhamilton
         password: ${{ secrets.password }}
         subject: minutes are published!
-        body: ${{ format('file://{0}/email.log', steps.generate_html_minutes.outputs.date }}
+        body: ${{ format('file://{0}/email.log', steps.generate_html_minutes.outputs.date) }}
         to: kimdhamilton+123@gmail.com
         from: kimdhamilton@gmail.com
         #content_type: # optional, default is text/plain
