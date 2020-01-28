@@ -22,7 +22,7 @@ jobs:
       run: |
         npm install
         bash ./generate-html.sh
-        echo ::set-output name=date::${DATE}
+        echo "##[set-output name=date;]${DATE}"
       env:
         CI: true
         DATE: "2020-01-21"
