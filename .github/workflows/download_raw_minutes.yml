@@ -17,6 +17,7 @@ jobs:
     - name: Setup custom environment variables
       run: git config --global push.default simple && git config --global user.email "kimdhamilton@gmail.com" && git config --global user.name "Kimbot"
     - name: Pull raw meeting log file
+      env: { DATE: "2020-01-21" }
       run: sh ./download-minutes.sh
 
 
