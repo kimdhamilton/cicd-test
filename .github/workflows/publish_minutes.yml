@@ -56,10 +56,10 @@ jobs:
         #content_type: # optional, default is text/plain
           
     - name: Twitter Action
-      uses: xorilog/twitter-action@0.1
+      uses: ethomson/send-tweet-action@v1
       with:
-        INPUT_MESSAGE: ${{ format('Credentials CG Minutes Available https://w3c-ccg.github.io/meetings/{0}', steps.generate_html_minutes.outputs.date) }}
-        INPUT_TWITTER_CONSUMER_KEY: ${{ secrets.twitter_api_key }}
-        INPUT_TWITTER_CONSUMER_SECRET: ${{ secrets.twitter_api_secret }}
-        INNPUT_TWITTER_ACCESS_TOKEN: ${{ secrets.twitter_access_token }}
-        INPUT_TWITTER_ACCESS_SECRET:  ${{ secrets.twitter_access_token_secret }}
+        status: ${{ format('Credentials CG Minutes Available https://w3c-ccg.github.io/meetings/{0}', steps.generate_html_minutes.outputs.date) }}
+        consumer-key: ${{ secrets.twitter_api_key }}
+        consumer-secret: ${{ secrets.twitter_api_secret }}
+        access-token: ${{ secrets.twitter_access_token }}
+        access-token-secret: ${{ secrets.twitter_access_token_secret }}
