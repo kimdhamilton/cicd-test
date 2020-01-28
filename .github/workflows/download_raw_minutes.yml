@@ -4,8 +4,7 @@ on:
   repository_dispatch:
     types: start
   schedule:
-    - cron:  '* * * * *'
-      #'*/1 * * * *'
+    - cron:  '*/5 * * * *'
       # 0 18 * * TUE
 
 jobs:
