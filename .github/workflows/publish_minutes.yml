@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Setup custom environment variables
-      run: git config --global push.default simple && git config --global user.email "kimdhamilton@gmail.com" && git config --global user.name "Kimbot"   
+      run: git config --global push.default simple && git config --global user.email "w3c.ccg@gmail.com" && git config --global user.name "W3C CCG"
     - name: Generate html minutes
       id: generate_html_minutes
       run: |
@@ -47,10 +47,10 @@ jobs:
       with:
         server_address: smtp.gmail.com
         server_port: 465
-        username: kimdhamilton
+        username: w3c.ccg
         password: ${{ secrets.password }}
         subject: ${{ format('[MINUTES] W3C Credentials CG Call - {0} 12pm ET', steps.generate_html_minutes.outputs.date) }}
         body: ${{ format('file://{0}/email.log', steps.generate_html_minutes.outputs.date) }}
-        to: kimdhamilton+123@gmail.com
-        from: kimdhamilton@gmail.com
+        to: w3c.ccg+123@gmail.com
+        from: w3c.ccg@gmail.com
         #content_type: # optional, default is text/plain

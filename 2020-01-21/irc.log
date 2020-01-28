@@ -151,7 +151,7 @@
 [2020-01-21T17:55:03.866Z]	<StephenCurran3>	"wallet" in mainstream usage is the app you have on your phone. It's not the bit of the any "thingy" (agent, whatever) that stores things. Using that term is fighting a losing battle.
 [2020-01-21T17:55:13.758Z]	<manu>	JoeAndrieu: The interfaces that we use to get access to stores vs the stores themselves are important. We also need a good separation between those so we can move EDVs around w/o changing front-end wallet.
 [2020-01-21T17:55:19.658Z]	<JoeAndrieu>	q?
-[2020-01-21T17:55:24.577Z]	<JoeAndrieu>	ack Orie
+[2020-01-21T17:55:24.577Z]	<JoeAndrieu>	ack Orie 
 [2020-01-21T17:55:40.839Z]	<dlongley>	there's probably also a naming issue here where the general public will understand "wallet" as all of the layers, but developers/technologists should understand there are more layers
 [2020-01-21T17:55:43.743Z]	<manu>	Orie: I agree with what Joe is saying about wallets - had a discussion w/ Christopher around overlap w/ concept of wallet and concept of HD wallet.
 [2020-01-21T17:56:52.620Z]	<manu>	Orie: Procedurally finding all tokens in an HD Wallet across all different ledgers is difficult... key to unlocking this is figuring out interfaces to cryptographic material for controlling data that's associated with an identifier. I don't like using wallet for that vs. keystore - either they are keys or a mnemonic - like that.
