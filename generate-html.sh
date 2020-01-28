@@ -1,7 +1,5 @@
 #!/bin/bash
 
-DATE=2020-01-21
-
 if [[ -f "$DATE/irc.log" && ! -f "$DATE/index.html" ]]; then  
     DIRECTORY=$DATE
 
