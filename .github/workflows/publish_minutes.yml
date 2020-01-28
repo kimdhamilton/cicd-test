@@ -29,7 +29,7 @@ jobs:
         
     - uses: stefanzweifel/git-auto-commit-action@v2.5.0
       with:
-        commit_message: Add html minutes for $DATE telecon [ci skip]
+        commit_message: Add html minutes for telecon [ci skip]
         branch: master
 
         # Optional git params
@@ -40,7 +40,6 @@ jobs:
 
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DATE: $DATE
 
   send-email:
     runs-on: ubuntu-latest
