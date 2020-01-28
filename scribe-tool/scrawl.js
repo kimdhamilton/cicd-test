@@ -388,7 +388,8 @@
               } else if(lastName in aliases) {
                 scrawl.present(context, aliases[lastName]);
               } else {
-                console.log('Could not find alias for', person);
+                scrawl.present(context, person);
+                //console.log('Could not find alias for', person);
               }
             }
           }
@@ -569,9 +570,16 @@
 
     // build the list of people present
     for(var name in context.present) {
-      var person = scrawl.people[name]
-      person['name'] = name;
-      present.push(person)
+      if (name in scrawl.people) {
+        var person = scrawl.people[name];
+        person['name'] = name;
+        present.push(person);
+      } else if (name) {
+        var person = {};
+        person['name'] = name;
+        present.push(person);
+      }
+
     }
 
     // modify the time if it was specified
@@ -638,7 +646,7 @@
       }
 
       // generate the list of people present
-      var peoplePresent = ''
+      var peoplePresent = '';
       for(var i = 0; i < present.length; i++) {
         var person = present[i];
 
@@ -646,8 +654,11 @@
           peoplePresent += ', ';
         }
 
-        peoplePresent += '<a href="' + person.homepage + '">'+
-          person.name + '</a>'
+        if (person.homepage) {
+          peoplePresent += '<a href="' + person.homepage + '">' + person.name + '</a>';
+        } else {
+          peoplePresent += person.name;
+        }
       }
       if(context.totalPresent) {
         peoplePresent += ', ' + context.totalPresent;
