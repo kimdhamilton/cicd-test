@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "Checking if there are minutes to publish for $DATE"
 if [[ -f "$DATE/irc.log" && ! -f "$DATE/index.html" ]]; then  
     DIRECTORY=$DATE
 
