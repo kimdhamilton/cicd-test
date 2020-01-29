@@ -22,12 +22,9 @@ jobs:
     - name: detect_file
       id: detect_file
       run: |
-        echo '${{ steps.file_changes.outputs.files_modified}}'
         echo '${{ steps.file_changes.outputs.files_added }}'
-        arr=${{ steps.file_changes.outputs.files_added }}
-        new_file="${arr[0]}"
-        echo $new_file
-        output=${new_file:0:10}
+        new_file=${{ steps.file_changes.outputs.files_added }}
+        output=${arr:1:10}
         echo $output
         echo "##[set-output name=date;]${output}"
       shell: bash
