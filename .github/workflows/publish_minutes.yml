@@ -22,10 +22,11 @@ jobs:
     - name: detect_file
       id: detect_file
       run: |
-        echo '${{ steps.file_changes.outputs.files_modified}}'
-        echo '${{ steps.file_changes.outputs.files_added }}'
+        echo ${{ steps.file_changes.outputs.files_modified}}
+        echo ${{ steps.file_changes.outputs.files_added }}
         arr=${{ steps.file_changes.outputs.files_added }}
-        new_file="${arr[0]}"
+        echo arr
+        new_file=${arr[0]}
         echo $new_file
         output=${new_file:1:10}
         echo $output
