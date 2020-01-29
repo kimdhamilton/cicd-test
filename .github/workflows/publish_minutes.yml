@@ -29,7 +29,6 @@ jobs:
         output="${new_file:0:10}"
         echo $output
         echo "##[set-output name=date;]${output}"
-        fi
       shell: bash
     - name: Setup custom environment variables
       run: git config --global push.default simple && git config --global user.email "w3c.ccg@gmail.com" && git config --global user.name "W3C CCG"
